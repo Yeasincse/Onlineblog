@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>{{ post.title }}</h1>
+{% extends 'base.html' %}
+   {% block title %}{{ post.title }}{% endblock %}
+   {% block content %}
+     <h1>{{ post.title }}</h1>
      <p class="date">
        Published {{ post.publish }} by {{ post.author }}
      </p>
      {{ post.body|linebreaks }}
-</body>
-</html>
+   {% endblock %}
